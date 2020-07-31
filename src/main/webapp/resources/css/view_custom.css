@@ -1,0 +1,78 @@
+@CHARSET "ISO-8859-1";
+
+
+.forty-percent {
+     width: 40%;
+}
+
+.ten-percent {
+     width: 10%;
+}
+
+.twelve-percent {
+     width: 12%;
+}
+
+.forteen-percent {
+     width: 14%;
+}
+
+.fifteen-percent {
+     width: 15%;
+}
+.seventeen-percent {
+     width: 17%;
+}
+
+.twentyfive-percent {
+     width: 25%;
+}
+
+.thirty-percent {
+     width: 30%;
+}
+
+.thirty-three-percent {
+     width: 33%;
+}
+
+.thirty-five-percent {
+     width: 35%;
+}
+
+.forty-percent {
+     width: 40%;
+}
+
+.fifty-percent {
+     width: 50%;
+}
+
+.sixty-percent {
+     width: 60%;
+}
+
+.sixty-five-percent {
+     width: 65%;
+}
+
+.seventy-percent {
+     width: 70%;
+}
+
+.eighty-percent {
+     width: 80%;
+}
+
+.ninty-percent {
+     width: 80%;
+}
+
+.top-alignment {
+     vertical-align: top;
+}
+
+.top-aligned-columns td{
+    vertical-align: top;
+}
+

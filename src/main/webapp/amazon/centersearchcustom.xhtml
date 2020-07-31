@@ -1,0 +1,79 @@
+<ui:composition
+	   xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:pe="http://primefaces.org/ui/extensions">
+	   
+  		<p:panel id="cTopHeaderPanelSearchPanel" styleClass="topheader-panel-search">
+  					 
+  			  <p:panelGrid columns="3" 
+  			  			   layout="grid"
+  			  			   columnClasses="ui-grid-col-3  topheader-panelgrid-selectone-padding,
+  			  			   				  ui-grid-col-8  topheader-panelgrid-inputtext-padding, 
+  			  			   				  ui-grid-col-2  topheader-panelgrid-button-padding" 
+  			  			   styleClass="ui-panelgrid-blank"> 
+			               				  
+   				
+   				 <p:panelGrid columns="1" 
+   				              layout="grid"
+   				              columnClasses="ui-grid-col-12 topheader-panelgrid-selectone"
+   				              styleClass="ui-panelgrid-blank"> 
+   				             
+	   				<p:selectOneMenu id="cCategoriesPanelSearchOneSelect" 
+	   								 styleClass="topheader-panelgrid-os"
+				             		 panelStyleClass="topheader-panelgrid-os-panel"
+				             		 filter="true"
+				             		 filterMatchMode="contains"
+				             		 value="#{cAmazonDataBean.cSelectedCategoryItem}">
+							<f:selectItems value="#{cAmazonDataBean.cCategoriesItems}" />
+					</p:selectOneMenu>	
+					
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2" 
+							 layout="grid"
+				             styleClass="topheader-panelgrid-inputtext-p"
+				             columnClasses="topheader-panelgrid-inputtext-c, 
+				             				topheader-panelgrid-inputtext-w">
+				             
+					<p:inputText id="cTopHeaderPanelSearchInputText" title="Enter Key Words" 
+							             value="#{cAmazonDataBean.cCategorySearchInputText}"
+							             styleClass="topheader-search-inputtext">
+								 
+    				</p:inputText>
+    				
+    				<p:watermark id="cTopHeaderPanelSearchInputTextWM"
+    							 for="cTopHeaderPanelSearchInputText" 
+    							 value="Search with a keyword" />
+    				
+				</p:panelGrid>
+	          				 
+  				<p:panelGrid id="cTopHeaderPanelSearchButtonPanelGrid" 
+  							 columns="1" 
+  							 layout="grid"
+				             columnClasses="ui-grid-col-12 hundred-percent"
+				             styleClass="topheader-panelgrid-button">
+				            
+				            <p:commandButton id="cTopHeaderPanelSearchButton"  
+					            			 value="Search" 
+					            			 title="Search" 
+					            			 styleClass="topheader-search-button"
+		            						 actionListener="#{cAmazonDataBean.onTopHeaderPanelSearchButton}" 
+		            						 update=":pAmazonMainForm:pAmazonMainMessages,
+		            						 		 :pAmazonMainForm:cCategNodesMenuPanel,
+		            						 		 :pAmazonMainForm:cItemsDataViewPanel" 
+		            						 icon="ui-icon-search"
+		            						 onstart="PF('blockUIWidgetSearchWiz').block()" 
+		            						 oncomplete="PF('blockUIWidgetSearchWiz').unblock()"/> 
+				</p:panelGrid>
+  			</p:panelGrid>
+  			
+  			<pe:blockUI widgetVar="blockUIWidgetSearchWiz">
+				      <h:graphicImage library="images" name="loader.gif"  
+				        style="margin-right: 12px; vertical-align: middle;"/>
+			 </pe:blockUI>   
+  		</p:panel>
+	   	
+ </ui:composition>

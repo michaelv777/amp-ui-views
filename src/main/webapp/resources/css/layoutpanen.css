@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+.pe-layout-pane-content.layout-pane-north
+{
+	padding:0;
+}
+
+.ui-layout-pane.layout-pane-north
+{
+	padding:0;
+}
+
+.ui-layout-center.layout-pane-north
+{
+	padding:0;
+}
+
+.ui-layout-pane-center.layout-pane-north 
+{
+	padding:0;
+}
+
+.ui-layout-pane-center.layout-pane-north  
+{
+	padding:0;
+}
+
+.ui-toolbar.layout-pane-north   
+{
+    padding: 0px;	
+}
+.ui-menu.layout-pane-north  
+{
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}

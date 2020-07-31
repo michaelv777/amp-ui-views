@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+
+.ui-widget {
+   font-family: "Segoe UI", Verdana, Arial, sans-serif;
+   font-size: 0.9em;
+}
+       
+.ui-widget .ui-widget {
+   font-family: "Segoe UI", Verdana, Arial, sans-serif; 
+   font-size: 0.9em;
+}
+       
+ .redColor{
+	color:red;
+}
+
+.blueColor{
+   color:blue;
+}
+
+.greenColor{
+   color:green;
+}
+
+.orangeColor{
+   color:orange;
+}
+
+.greyColor{
+   color:grey;
+}

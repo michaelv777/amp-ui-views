@@ -1,0 +1,61 @@
+<ui:composition
+	   xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:pe="http://primefaces.org/ui/extensions">
+
+	  <p:panelGrid columns="1" styleClass="panelgrid-menu">
+			<p:panel id="cCategNodesMenuPanel" styleClass="catnodes-itemsmenu-panel">
+				<p:megaMenu id="cCategNodeMegaMenu"
+							model="#{cAmazonDataBean.cCategoriesNodesMenuModel}" 
+							orientation="horizontal" 
+							styleClass="catnodes-megamenu">
+				    
+				</p:megaMenu>
+			</p:panel>	   					
+      </p:panelGrid>
+	 
+	  <p:panel id="cItemsDataViewPanel" styleClass="dataitems-panel">
+	  
+	 	<p:dataGrid value="#{cAmazonDataBean.getSelectedCategoryItems(1,2)}" 
+	   			    var="item" 
+	   			    styleClass="grid-data-view"
+	   			    columns="8"
+	   			    rows="20"
+	   			    layout="grid"
+	   			    paginator="true"
+	   			    paginatorPosition="both"
+	   			    paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+        			rowsPerPageTemplate="8, 16, 24">
+	   			            
+   			       <div class="product-box">
+   						<a target="_blank" href="#{item.detailPageURL}">
+   							<img src="#{item.mediumImage.getURL()}" width="120" height="160"></img>
+   						</a>
+   						
+   						<div class="product-title">
+       						<h3>#{item.itemAttributes.title}</h3>
+   						</div>
+   						
+   						<p class="product-price">#{item.offerSummary.lowestNewPrice.formattedPrice}<br></br>
+       						<a target="_blank" style="color: #337ab7; text-decoration:none;" href="#{item.detailPageURL}"> More offers </a>
+   						</p>
+   						
+   						<div>
+					        <span class="a-button a-button-primary">
+					            <a target="_blank" href="#{item.detailPageURL}" style="text-decoration:none">
+					                <span class="a-button-inner">
+					                    <img src="http://webservices.amazon.ca/scratchpad/assets/images/Amazon-Favicon-64x64.png" class="a-icon a-icon-shop-now"></img>
+					                    <input class="a-button-input" value="Add to cart"></input>
+					                    <span class="a-button-text">Shop Now</span>
+					                </span>
+					            </a>
+					        </span>
+    					</div>
+   				   </div>
+	   	</p:dataGrid>
+	   	
+	 </p:panel>
+ </ui:composition>

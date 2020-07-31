@@ -1,0 +1,4 @@
+rootProject.name = 'amp-ui-views'
+
+include 'amp-jpa-entities'
+include 'amp-business-service'

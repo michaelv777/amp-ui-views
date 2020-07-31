@@ -1,0 +1,137 @@
+plugins {
+    id "org.joinfaces" version "4.0.9"
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'project-report'
+apply plugin: 'maven-publish'
+
+apply from: './versions.gradle'
+
+war {
+    archiveName = "amp-ui-views.war"
+	baseName = "amp-ui-views"
+	rootSpec.exclude("**/log4j2.properties")
+}
+
+group = 'amp.service.common'
+version = '0.0.1-SNAPSHOT'
+description = """amp-ui-views"""
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    
+    maven {
+        url "http://repository.primefaces.org"
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+configurations.all {
+	
+	exclude group: "log4j", module:"log4j"
+	exclude group: "org.slf4j", module:"slf4j-simple"
+	exclude group: 'commons-logging', module: 'commons-logging'
+	exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    exclude module: 'logback-classic'
+    
+    /*
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+	    if (details.requested.name.contains('log4j-over-slf4j')) 
+	    {
+	       details.useTarget "org.apache.logging.log4j:log4j-slf4j-impl:$log4j2_version"
+	    }
+    }
+    */
+}
+
+evaluationDependsOn(':amp-jpa-entities')
+evaluationDependsOn(':amp-business-service')
+
+dependencies {
+    compile group: 'amp.service.common', name: 'amp-jpa-entities', version:'0.0.1-SNAPSHOT'
+    compile group: 'amp.service.common', name: 'amp-business-service', version:'0.0.1-SNAPSHOT'
+    
+    compile "org.joinfaces:primefaces-spring-boot-starter"
+    
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-log4j2:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
+    compile("org.springframework.boot:spring-boot-starter-aop:$springBootVersion")
+    
+    compile group: 'org.apache.poi', name: 'poi', version:"$poi_version"
+    compile group: 'org.apache.poi', name: 'poi-scratchpad', version:"$poi_version"
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version:"$poi_version"
+    compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version:"$poi_version"
+    
+    
+    //Logging API
+	compile group: 'org.slf4j' , name: 'slf4j-api', version: "$sl4j_version"
+	//Logging log4j2 implementation for logging API above
+	compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "$log4j2_version"
+	//Logging log4j2 Commons Logging Bridge
+	compile group: 'org.apache.logging.log4j', name: 'log4j-jcl', version: "$log4j2_version"
+    
+    compile group: 'com.lowagie', name: 'itext', version: "$itext_version"
+	compile group: 'net.sf.opencsv', name: 'opencsv', version: "$opencsv_version"
+	compile group: 'javax.mail', name: 'javax.mail-api', version:"$mail_version"
+	
+	compile group: 'org.primefaces.themes', name: 'all-themes', version: '1.0.10'
+    compile group: 'org.primefaces.themes', name: 'dark-hive', version: '1.0.10'
+    compile group: 'org.primefaces.themes', name: 'afterdark', version: '1.0.10'
+    compile group: 'org.primefaces.themes', name: 'eggplant', version: '1.0.10'
+    
+    
+    //compile group: 'javax.faces', name: 'javax.faces-api', version:'2.1'
+    //compile group: 'com.sun.faces', name: 'jsf-api', version:'2.1.9'
+    //compile group: 'com.sun.faces', name: 'jsf-impl', version:'2.1.9'
+    //compile group: 'javax.el', name: 'el-api', version:'2.2'
+    //compile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+    //compile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.2'
+    //compile group: 'javax.servlet.jsp.jstl', name: 'jstl-api', version:'1.2'
+    
+    compile group: 'net.sourceforge.cssparser', name: 'cssparser', version:'0.9.5'
+    compile group: 'org.w3c.css', name: 'sac', version:'1.3'
+    
+    compile group: 'com.google.code.gson', name: 'gson', version: "$gson_version"
+    /*
+    compile group: 'org.primefaces', name: 'primefaces', version:'6.0'
+    compile group: 'org.primefaces.extensions', name: 'primefaces-extensions', version:'6.0.0'
+    */
+    
+    compile group: 'rome', name: 'rome', version:'1.0'
+    compile group: 'jdom', name: 'jdom', version:'1.1'
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version:'1.3.1'
+    compile group: 'commons-io', name: 'commons-io', version:'2.4'
+   
+    /*compile group: 'javax', name: 'javaee-api', version:'6.0'*/
+    
+    compile group: 'jstl', name: 'jstl', version:'1.2'
+    /*compile group: 'com.oracle', name: 'ojdbc6', version:'11.2.0.3'*/
+    
+    compile group: 'com.lowagie', name: 'itext', version:'2.1.5'
+    
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version:'2.0.1'
+    
+    compile group: 'io.netty', name: 'netty-common', version:'4.1.5.Final'
+    
+    providedRuntime "org.joinfaces:tomcat-spring-boot-starter"
+    
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+}
+
+defaultTasks 'clean', 'build','htmlDependencyReport', 'publishToMavenLocal', 'publish'

@@ -1,0 +1,123 @@
+@CHARSET "ISO-8859-1";
+
+.zero-percent {
+     width: 0%;
+}
+
+.five-percent {
+     width: 5%;
+}
+
+.ten-percent {
+     width: 10%;
+}
+
+.fifteen-percent {
+     width: 15%;
+}
+
+.twenty-percent {
+     width: 20%;
+}
+
+.twentyfive-percent {
+     width: 25%;
+}
+
+.thirty-percent {
+     width: 30%;
+}
+
+.forty-percent {
+     width: 40%;
+}
+
+.fifty-percent {
+     width: 50%;
+}
+
+.sixty-percent {
+     width: 60%;
+}
+
+.sixty-five {
+     width: 65%;
+}
+
+.seventy-percent {
+     width: 70%;
+}
+
+.seventyfive-percent {
+     width: 75%;
+}
+
+.eighty-percent {
+     width: 80%;
+}
+
+.eightyfive-percent {
+     width: 85%;
+}
+
+.ninety-percent {
+     width: 90%;
+}
+
+.hundred-percent {
+     width: 100%;
+}
+
+.top-alignment {
+     vertical-align: top;
+}
+
+.no-board-width {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	
+	border-bottom-style: none;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+.no-panelgrid-padding-width.ui-panelgrid-cell {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+.ui-corner-all {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.ui-datagrid-column {
+    padding: 0px;
+}
+
+.ui-corner-top {
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.ui-corner-bottom {
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.ui-corner-left {
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+.ui-corner-right {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}

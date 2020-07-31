@@ -1,0 +1,34 @@
+@CHARSET "ISO-8859-1";
+
+		.ui-panel {
+             padding: 0px ;
+             
+         }
+         .ui-panel .ui-widget-content {
+             padding: 0px ;
+             
+         }
+         .ui-panel .ui-panel-content{
+             padding: 0px ;
+             
+           
+         }
+
+         iframe.noScrolling{
+          
+           overflow: hidden;
+           pointer-events:none;
+        }
+        
+        iframe.scrolling{
+           height: 100%;
+     	   width: 100%; 	
+           overflow: scroll;
+           pointer-events:auto;
+        }
+        
+        iframe.visible{
+           overflow: visible;
+           pointer-events:auto;
+        }
+	 

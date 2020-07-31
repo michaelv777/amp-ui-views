@@ -1,0 +1,57 @@
+@CHARSET "ISO-8859-1";
+
+		.ui-layout-unit {
+             padding: 0px ;
+             
+         }
+         .ui-layout-unit .ui-layout-unit-content {
+             padding: 0px ;
+             
+         }
+         .ui-layout-north {
+             padding: 0px ;
+             
+           
+         }
+         .ui-layout-east {
+             padding: 0px ;
+            
+           
+         }
+         .ui-layout-west {
+             padding: 0px ;
+            
+           
+         }
+         .ui-layout-center {
+             padding: 0px ;
+             
+           
+         }
+         .ui-layout-south {
+             padding: 0px ;
+            
+           
+         }
+         
+         .pe-layout-pane-content {
+		    padding: 0px !important;
+		 }
+
+         iframe.noScrolling{
+          
+           overflow: hidden;
+           pointer-events:none;
+        }
+        
+        iframe.scrolling{
+           height: 100%;
+     	   width: 100%; 	
+           overflow: scroll;
+           pointer-events:auto;
+        }
+        
+        iframe.visible{
+           overflow: visible;
+           pointer-events:auto;
+        }

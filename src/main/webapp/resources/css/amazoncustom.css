@@ -1,0 +1,107 @@
+@CHARSET "ISO-8859-1";
+
+.__mobile-associates-search-widget {
+	width: 100% !important;
+}
+
+.__mobileAssociatesSearchWidget_adunit_1.__mobile-associates-search-widget {
+	width: 100% !important;
+}
+
+.topheader-panelgrid-amsearch
+{
+	width: 100%;
+	
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}
+
+.topheader-panelgrid-amsearch.ui-widget-content
+{
+	
+	border-style: none;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}
+
+.topheader-panelgrid-amsearch.ui-panelgrid .ui-widget-content {
+    border-style: none;
+    border-image-width: 0 0 0 0;
+    
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+.topheader-panelgrid-amsearch.ui-panelgrid .ui-panelgrid-cell {
+   
+    border-style: none;
+    border-image-width: 0 0 0 0;
+    
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+
+.topheader-panelgrid-amsearchc
+{
+	width: 100%;
+}
+
+.topheader-panelgrid-amsearchc td, .topheader-panelgridc tr
+{
+   
+}
+
+.topheader-panelgrid-amsearchc.ui-panelgrid .ui-panelgrid-cell {
+    padding-top: 4px;
+	padding-right: 1px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+.topheader-panel-amsearchc.ui-panel .ui-panel-content
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	
+	
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	
+}
+
+.topheader-panel-amsearchc.ui-widget-content
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	
+	
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	
+}

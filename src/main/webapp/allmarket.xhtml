@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   
+   <title>way4deal</title>
+
+   <h:outputScript library="primefaces" name="jquery/jquery.js" target="head"/>
+   <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+   
+</h:head>
+ <h:body id="pMainBody">  
+  <f:view contentType="text/html">
+  	<h:form id="pMainForm">
+	   <p:growl id="pMainMessages" showDetail="true"/>
+		<pe:layout id="pMainLayout">
+	   	
+	   		<pe:layoutPane position="west" size="15%" minSize="15%" maxSize="25%" style="background: white !important;">
+	   			
+         	</pe:layoutPane>	
+         	
+         	<pe:layoutPane position="east" size="15%" minSize="15%" maxSize="25%" style="background: white !important;">
+	   			
+         	</pe:layoutPane>
+         	
+	   		<pe:layoutPane position="center" size="70%">
+	   				
+         	</pe:layoutPane>
+        </pe:layout>	   	
+    	 
+	</h:form> 
+   </f:view>
+  </h:body>
+ </html>

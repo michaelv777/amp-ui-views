@@ -1,0 +1,55 @@
+<ui:composition
+	   xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:pe="http://primefaces.org/ui/extensions">
+	   
+	  <p:panelGrid columns="1" styleClass="panelgrid-menu">
+	   			<p:accordionPanel id="cCategoriesMenuModelId2D1" 
+	   							  value="#{cAmazonDataBean.cCategories}" 
+	   							  var="category"
+	   							  styleClass="categories-menu">
+	   							  
+	   				<p:ajax event="tabChange" listener="#{cAmazonDataBean.onCategoriesTabChange}" 
+	   										  update=":pAmazonMainFormD1:pAmazonMainMessagesD1"
+	   										  onstart="PF('blockUIWidgetD1').block()" 
+					                		  oncomplete="PF('blockUIWidgetD1').unblock()" />
+	   										  
+        			<p:ajax event="tabClose" listener="#{cAmazonDataBean.onCategoriesTabClose}" 
+        									 update=":pAmazonMainFormD1:pAmazonMainMessagesD1" 
+        									 onstart="PF('blockUIWidgetD1').block()" 
+					                		 oncomplete="PF('blockUIWidgetD1').unblock()"/>
+        			  
+			        <p:tab title="#{category.getName()}" titleStyleClass="categories-menu-title">
+			            <h:panelGrid columns="1" style="width: 100%">
+			                <p:selectOneListbox id="cCategoriesMenuNodes" 
+			                					value="#{cAmazonDataBean.cSelectedCategoryNode}" 
+			                					converter="categoryNodeConverter" 
+												var="catnodeg"
+			                					filter="true" 
+			                					filterMatchMode="contains"
+			                					styleClass="catnodes-selectonemenu">
+			                	
+			                	<p:ajax event="change" 
+			                			listener="#{cAmazonDataBean.onCategoryNodeChange}" 
+			                			update=":pAmazonMainFormD1:pAmazonMainMessagesD1"
+        								onstart="PF('blockUIWidgetD1').block()" 
+					                	oncomplete="PF('blockUIWidgetD1').unblock()"/>
+        				
+					            <f:selectItems value="#{cAmazonDataBean.getRootCategoryNodes(category.getRootbrowsenode())}" 
+					            			   var="catnodel" 
+					            			   itemLabel="#{catnodel.getName()}" 
+					            			   itemValue="#{catnodel}" />
+					            <p:column>
+					                <h:outputText value="#{catnodeg.getName()}" />
+					            </p:column>
+					            
+					        </p:selectOneListbox>
+			            </h:panelGrid>
+			        </p:tab>
+			    </p:accordionPanel>		
+      </p:panelGrid>	
+
+ </ui:composition>

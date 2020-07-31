@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+   <f:facet name="first">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+   </f:facet>
+	
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   
+   <title>way4deal Amazon</title>
+  
+   <h:outputScript library="primefaces" name="jquery/jquery.js" target="head"/>
+   <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+   <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+   
+</h:head>
+  <h:body id="pAmazonMainBodyD1">  
+  <f:view>
+   
+   <h:outputStylesheet library="css" name="layout_custom.css"/>
+   <h:outputStylesheet library="css" name="panel_custom.css"/>
+   <h:outputStylesheet library="css" name="font_custom.css"/>
+   <h:outputStylesheet library="css" name="view_custom.css"/>
+   <h:outputStylesheet library="css" name="categmenu.css"/>
+   <h:outputStylesheet library="css" name="categnodesmenu.css"/>
+    
+   <h:form id="pAmazonMainFormD1">
+       <p:growl id="pAmazonMainMessagesD1" showDetail="true" sticky="true"/>
+       
+	   <pe:layout id="pMainLayout">
+	   		<pe:layoutPane position="west" size="20%" minSize="20%" maxSize="20%" 
+	   					   resizeWhileDragging="false"
+	   					   initClosed="false">
+	   			<h:panelGrid id="pMainMenuPanelD1" columns="1" style="width: 100%">
+	   				<ui:include src="leftcategmenu.xhtml" />
+	   			</h:panelGrid>	
+         	</pe:layoutPane>	
+         	
+	   		<pe:layoutPane position="center" size="85%" 
+	   		               initClosed="#{monitorPortalBean.getMonitorMainPanelClosed()}">
+   				
+   				<p:panel id="cItemsDataViewPanelD1" styleClass="dataitems-panel">
+	     			<h:panelGrid id="cItemsDataViewPanelGridD1" columns="1" style="width: 100%">
+	     				<script type="text/javascript">
+		   				amzn_assoc_ad_type ="responsive_search_widget"; 
+		   				amzn_assoc_tracking_id ="allmarket09-20"; 
+		   				amzn_assoc_marketplace ="amazon"; 
+		   				amzn_assoc_region ="US"; 
+		   				amzn_assoc_placement =""; 
+		   				amzn_assoc_search_type = "search_widget";
+		   				amzn_assoc_width ="auto"; 
+		   				amzn_assoc_height ="auto"; 
+		   				amzn_assoc_default_search_category =""; 
+		   				amzn_assoc_default_search_key ="";
+		   				amzn_assoc_theme ="light"; 
+		   				amzn_assoc_bg_color ="FFFFFF"; 
+		   			</script>
+		   			<script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;Operation=GetScript&amp;ID=OneJS&amp;WS=1&amp;Marketplace=US"></script>
+		   			</h:panelGrid>					
+		   			</p:panel>
+         	</pe:layoutPane>
+        </pe:layout>
+  	    
+  	    <pe:blockUI widgetVar="blockUIWidgetD1" timeout="120000">
+	   		<h:panelGrid columns="2">  
+		        <h:graphicImage library="images" name="loader.gif"  
+		                        style="margin-right: 12px; vertical-align: middle;"/>
+		        <h:outputText value="Please wait..." style="white-space: nowrap;"/>  
+		    </h:panelGrid>
+		</pe:blockUI>
+	
+	 </h:form> 
+    </f:view>
+  </h:body>
+ </html>

@@ -1,0 +1,36 @@
+@CHARSET "ISO-8859-1";
+
+.categories-menu.ui-accordion .ui-accordion-content
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 2px;
+	padding-left: 2px;
+	border-top: 0 none;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+
+.categories-menu.ui-accordion .ui-accordion-header
+{
+	border-radius: 7px;
+}
+
+.categories-menu-title 
+{ 
+	cursor: pointer !important; 
+	position: relative !important; 
+	margin-top: 1px !important; 
+	min-height: 0 !important; 
+	padding: .5em .5em .5em 2.2em !important;
+	
+	/*background: #3b3b3b !important;*/
+	/*color: #ffc956 !important;*/
+	background: rgb(238, 238, 238) !important;
+	
+	font-family: "latoregular","Trebuchet MS",Arial,Helvetica,sans-serif !important;
+	font-size: 14px !important;
+	font-weight: normal  !important;
+}
+
+
