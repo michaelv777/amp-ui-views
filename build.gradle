@@ -13,6 +13,12 @@ apply plugin: 'maven-publish'
 
 apply from: './versions.gradle'
 
+bootWar {
+    archiveName = "amp-ui-views.war"
+	baseName = "amp-ui-views"
+	rootSpec.exclude("**/log4j2.properties")
+}
+
 war {
     archiveName = "amp-ui-views.war"
 	baseName = "amp-ui-views"
